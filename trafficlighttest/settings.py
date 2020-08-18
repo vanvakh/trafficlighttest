@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'postsapp',
+    'postsapp.apps.PostsappConfig',
 ]
 
 MIDDLEWARE = [

@@ -15,12 +15,20 @@
         <input type="submit" value="Load Data">
     </form>
     <div>
-        {% for user in users %}
-        <p> {{ user.username }} </p>
-        {% endfor %}
-        {% for post in posts %}
-        <p> {{ post.title }} </p>
-        {% endfor %}
+        <table border="1">
+            <tr>
+                <th>Username</th>
+                <th>Post Title</th>
+                <th>Post Body</th>
+            </tr>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.user_id.username }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.body }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </body>
 </html>

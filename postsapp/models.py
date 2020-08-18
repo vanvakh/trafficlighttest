@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class User(models.Model):
+class CustomUser(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=60)
     username = models.CharField(max_length=60)
@@ -18,9 +18,12 @@ class User(models.Model):
     company_catchphrase = models.CharField(max_length=60)
     company_bs = models.CharField(max_length=60)
 
+    def __str__(self):
+        return (self.username)
+
 class Post(models.Model):
     user_id = models.ForeignKey(
-        'User',
+        'CustomUser',
         on_delete=models.CASCADE,
     )
     id = models.IntegerField(primary_key=True)

@@ -7,11 +7,20 @@
 </head>
 <body>
     <form method="POST"> {% csrf_token %}
-        <input type="submit" value="Get">
+        <input type="hidden" name = "action" value="delete_data">
+        <input type="submit" value="Clear Database">
+    </form>
+    <form method="POST"> {% csrf_token %}
+        <input type="hidden" name = "action" value="load_data">
+        <input type="submit" value="Load Data">
     </form>
     <div>
-        <p> {{ u }} </p>
-        <p> {{ p }} </p>
+        {% for user in users %}
+        <p> {{ user.username }} </p>
+        {% endfor %}
+        {% for post in posts %}
+        <p> {{ post.title }} </p>
+        {% endfor %}
     </div>
 </body>
 </html>

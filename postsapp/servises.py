@@ -10,6 +10,12 @@ POSTS_URL = 'http://jsonplaceholder.typicode.com/posts'
 def clear_database():
     CustomUser.objects.all().delete()
 
+def get_users():
+    return (CustomUser.objects.all())
+
+def get_posts():
+    return (Post.objects.all())
+
 def load_users_data():
     users_json = get_json(USERS_URL)
     for user in users_json:

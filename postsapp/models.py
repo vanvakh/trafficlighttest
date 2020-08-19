@@ -3,9 +3,9 @@ from django.db import models
 
 class CustomUser(models.Model):
     id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=60)
-    username = models.CharField(max_length=60)
-    email = models.EmailField()
+    name = models.CharField(max_length=60,)
+    username = models.CharField(max_length=60, unique=True)
+    email = models.EmailField(unique=True)
     address_street = models.CharField(max_length=60)
     address_suite = models.CharField(max_length=60)
     address_city = models.CharField(max_length=60)
@@ -18,8 +18,6 @@ class CustomUser(models.Model):
     company_catchphrase = models.CharField(max_length=60)
     company_bs = models.CharField(max_length=60)
 
-    def __str__(self):
-        return (self.username)
 
 class Post(models.Model):
     user_id = models.ForeignKey(
@@ -28,4 +26,4 @@ class Post(models.Model):
     )
     id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=60)
-    body = models.TextField()
+    body = models.TextField(blank=True)

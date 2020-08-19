@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from .servises import *
-from .models import CustomUser
 
 
 def posts_view(request):
@@ -9,9 +8,9 @@ def posts_view(request):
         if request.POST['action'] == 'delete_data':
             clear_database()
         if request.POST['action'] == 'load_data':
-            load_users_data()
-            load_posts_data()
+            load_data_to_database()
+    posts = get_posts()
     context = {
-        'posts': get_posts()
+        'posts': posts
     }
     return render(request, 'postsapp/index.html', context)

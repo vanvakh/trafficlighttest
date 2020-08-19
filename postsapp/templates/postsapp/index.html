@@ -11,24 +11,24 @@
         <div class="btn-group" role="group">
             <form method="POST"> {% csrf_token %}
                 <input type="hidden" name = "action" value="load_data">
-                <input type="submit" value="Load Data"class="btn btn-primary mr-2">
+                <input type="submit" value="Загрузить данные в базу" class="btn btn-primary mr-2">
             </form>  
             <form method="POST"> {% csrf_token %}
                 <input type="hidden" name = "action" value="delete_data" >
-                <input type="submit" value="Clear Database" class="btn btn-danger">
+                <input type="submit" value="Очистить базу данных" class="btn btn-danger">
             </form>
         </div>
     </div>
     <div>
         <table class="table">
             <tr>
-                <th>Username</th>
-                <th>Post Title</th>
-                <th>Post Body</th>
+                <th>Имя пользователя</th>
+                <th>Тема поста</th>
+                <th>Текст поста</th>
             </tr>
             {% for post in posts %}
             <tr>
-                <td>{{ post.user_id.username }}</td>
+                <td>{{ post.user_id.name }}</td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.body }}</td>
             </tr>

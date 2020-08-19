@@ -21,4 +21,4 @@
 | Leanne Graham     | qui est esse  | est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla |
 
 ### Пример работы приложения:
-![alt text](https://imgur.com/znnQZ9A)
+![alt text](https://i.imgur.com/znnQZ9A.png)

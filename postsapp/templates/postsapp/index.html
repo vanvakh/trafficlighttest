@@ -4,34 +4,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
+    <title>Posts App</title>
 </head>
 <body>
     <div class="container-fluid p-3">   
         <div class="btn-group" role="group">
             <form method="POST"> {% csrf_token %}
                 <input type="hidden" name = "action" value="load_data">
-                <input type="submit" value="Загрузить данные в базу" class="btn btn-primary mr-2">
+                <input type="submit" value="Load data to database" class="btn btn-primary mr-2">
             </form>  
             <form method="POST"> {% csrf_token %}
                 <input type="hidden" name = "action" value="delete_data" >
-                <input type="submit" value="Очистить базу данных" class="btn btn-danger">
+                <input type="submit" value="Clear database" class="btn btn-danger">
             </form>
         </div>
     </div>
     <div>
         <table class="table">
             <tr>
-                <th>Имя пользователя</th>
-                <th>Тема поста</th>
-                <th>Текст поста</th>
+                <th>User name</th>
+                <th>Post title</th>
+                <th>Post body</th>
             </tr>
             {% for post in posts %}
-            <tr>
-                <td>{{ post.user_id.name }}</td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.body }}</td>
-            </tr>
+                <tr>
+                    <td>{{ post.user.name }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.body }}</td>
+                </tr>
             {% endfor %}
         </table>
     </div>

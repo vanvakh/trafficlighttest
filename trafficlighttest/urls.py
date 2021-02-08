@@ -2,5 +2,5 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('posts/', include('postsapp.urls')),
+    path('', include('postsapp.urls')),
 ]
